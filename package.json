@@ -1,25 +1,36 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "hyperspace-v1-site",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "gatsby": "^2.3.16",
+    "gatsby": "^2.3.23",
     "gatsby-image": "^2.0.37",
+    "gatsby-plugin-jss": "^2.0.9",
     "gatsby-plugin-manifest": "^2.0.28",
+    "gatsby-plugin-material-ui": "^1.2.4",
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sharp": "^2.0.32",
+    "gatsby-plugin-styled-components": "^3.0.7",
+    "gatsby-remark-copy-linked-files": "^2.0.11",
+    "gatsby-remark-images": "^3.0.10",
+    "gatsby-remark-prismjs": "^3.2.8",
     "gatsby-source-filesystem": "^2.0.29",
+    "gatsby-transformer-remark": "^2.3.8",
     "gatsby-transformer-sharp": "^2.1.17",
+    "mdi-material-ui": "^5.10.0",
+    "prismjs": "^1.16.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0"
   },
   "devDependencies": {
-    "prettier": "^1.17.0"
+    "prettier": "^1.17.0",
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2"
   },
   "keywords": [
     "gatsby"
