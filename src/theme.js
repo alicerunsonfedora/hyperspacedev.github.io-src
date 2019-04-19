@@ -1,6 +1,14 @@
 import {createMuiTheme} from '@material-ui/core';
 import {deepPurple, red} from '@material-ui/core/colors';
 
+function getType() {
+  if (typeof window !== `undefined`) { 
+      return window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark': 'light';
+    } else {
+      return 'light';
+    }
+}
+
 export const siteTheme = createMuiTheme({
     typography: {
       fontFamily: [
@@ -20,6 +28,6 @@ export const siteTheme = createMuiTheme({
     palette: {
         primary: deepPurple,
         secondary: red,
-        type: window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark': 'light'
+        type: getType()
     }
   });
