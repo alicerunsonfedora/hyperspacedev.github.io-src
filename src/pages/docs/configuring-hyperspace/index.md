@@ -69,9 +69,10 @@ There are other fields responsible for handling app information such as version,
 | Key | Default value | Description |
 | -- | -- | -- |
 | `developer` | "false" | Whether the app should be run in developer mode or not. This helps distinguish between a stable release and a beta release for users. |
-| `version` | Hyperspace version as a string | The version of the application. |
-| `license` | n/a | The license information for the app, if it falls under a different license than what Hyperspace includes. |
+| `version` | **Required:** Hyperspace version as a string | The version of the application. |
+| `license` | n/a | **Required:** The license information for the app, if it falls under a different license than what Hyperspace includes. |
 | `repository` | "https&#58;//github.com/hyperspacedev/hyperspace" | The URL to the repository containing the source code if it is open-source. |
+| `location` | "dynamic" | **Required:** The URL that points to your Hyperspace installation, or 'dynamic' if it should be inferred from `window.location`. |
 
 ### License information
 | Subkey | Default value | Description |
