@@ -75,7 +75,7 @@ const AppPage = ({ classes }) => (
           Try the beta
         </Button>
         <br/><br/>
-        <Typography variant="caption">*The current stable version available is 0.7, which predates the Material redesign.</Typography>
+        <Typography variant="caption" color="inherit">*The current stable version available is 0.7, which predates the Material redesign.</Typography>
       </div>
     </div>
     <div className={classes.root}>
