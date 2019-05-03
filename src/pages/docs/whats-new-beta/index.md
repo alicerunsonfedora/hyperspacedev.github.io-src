@@ -4,8 +4,28 @@ path: /docs/whats-new-beta
 description: 'Read about the latest features, improvements, changes, and bug fixes coming to Hyperspace (currently in beta).'
 priority: 0
 ---
+# 1.0.0beta3 (May 3, 2019)
 
-# 1.0.0beta2u2 (April 26, 2018)
+What's new:
+
+- Login screen changes include a new version string and a fixed Authorize button (fixes #24).
+  - Changes login text from "If you are from X" to "Not from X?".
+- Enforce stricter rules on when an instance is defederated in config.json (fixes #28):
+  - Default visibility changes from public to unlisted and cannot be changed to public in settings.
+  - Login page only allows to log in to instance from `registerBase`.
+- Makes updates to CSS and themes:
+  - Fix narrow margins on mobile devices (fixes #27).
+  - Remove the Royal II (King) theme and replace with Classic theme.
+  - Update colors for Attract theme to prevent CSS collisions (fixes #26).
+  - Settings menu includes new icons for clarity and ease-of-discoverability (fix #30).
+- Brand name is applied to more places in Hyperspace and changes Hyperspace app name in login process (fixes #34).
+- Addresses issue where media upload snackbars didn't dismiss properly (fixes #32).
+- Adds a Settings menu for editing profiles within Hyperspace and a new page at `/you` to edit a user's avatar, header, display name, and bio (fixes #14).
+
+
+-----
+
+# 1.0.0beta2u2 (April 26, 2019)
 
 What's new:
 

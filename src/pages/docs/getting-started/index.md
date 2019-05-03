@@ -16,7 +16,7 @@ To use the pre-built files, download them from our site and then place the conte
 ### Requirements
 
 - Git
-- Node.js 6 or higher
+- Node.js 8 or higher
 
 First, you'll need to download the Hyperspace source code, either by downloading the source code package from our site or cloning the Git repository:
 

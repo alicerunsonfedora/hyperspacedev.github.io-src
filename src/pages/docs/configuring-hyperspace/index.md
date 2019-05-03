@@ -36,6 +36,8 @@ There are some extra keys for handling actions such as federation, registrations
 | `registration` | n/a | Information regarding registration of the instance. See below for more information |
 | `admin` | n/a | The administrator that installed Hyperspace. |
 
+> Note: As of [Hyperspace 1.0.0beta3](https://github.com/hyperspacedev/hyperspace/releases/tag/1.0.0beta3)+, the `federated` key also controls other settings, including the default visibility of new posts, and also restricts login to the instance listed in `defaultInstance`.
+
 ### Registration information
 
 | Subkey | Default value | Description |
@@ -69,7 +71,7 @@ There are other fields responsible for handling app information such as version,
 | Key | Default value | Description |
 | -- | -- | -- |
 | `developer` | "false" | Whether the app should be run in developer mode or not. This helps distinguish between a stable release and a beta release for users. |
-| `version` | **Required:** Hyperspace version as a string | The version of the application. |
+| `version` | Hyperspace version as a string | **Required:** The version of the application. |
 | `license` | n/a | **Required:** The license information for the app, if it falls under a different license than what Hyperspace includes. |
 | `repository` | "https&#58;//github.com/hyperspacedev/hyperspace" | The URL to the repository containing the source code if it is open-source. |
 | `location` | "dynamic" | **Required:** The URL that points to your Hyperspace installation, or 'dynamic' if it should be inferred from `window.location`. |
