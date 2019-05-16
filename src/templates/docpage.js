@@ -10,7 +10,10 @@ import {
   Tooltip,
 } from "@material-ui/core"
 import { siteTheme } from "../theme"
+
 import ArrowBackIcon from "@material-ui/icons/ArrowBack"
+import ShareIcon from '@material-ui/icons/Share'
+
 import SEO from "../components/seo"
 import "../components/layout.css"
 
@@ -36,6 +39,9 @@ const styles = {
   backIcon: {
     marginLeft: -12,
     marginRight: 20,
+  },
+  title: {
+    flexGrow: 1
   },
   docTitle: {
     fontWeight: 500
@@ -137,6 +143,7 @@ const Template = ({ data, classes }) => {
   const title = data.markdownRemark.frontmatter.title
   const description = data.markdownRemark.frontmatter.description
   const html = data.markdownRemark.html
+  const path = data.markdownRemark.frontmatter.path
 
   return (
     <div className={classes.root}>
@@ -154,9 +161,26 @@ const Template = ({ data, classes }) => {
                   <ArrowBackIcon />
                 </IconButton>
               </Tooltip>
-            <Typography variant="h6" color="inherit">
+            <Typography variant="h6" color="inherit" className={classes.title}>
               Hyperspace Docs
             </Typography>
+            {/* <IconButton color="inherit" onClick={() => {
+              if (navigator.share) {
+                navigator.share({
+                  title: title,
+                  text: description,
+                  url: "http://www.google.com"
+                }).then(() => console.log("Share successful"))
+                  .catch((error) => console.error("Error while sharing: " + error));
+              } else { 
+                let tempDiv = document.createElement('input');
+                tempDiv.value = `https://${window.location.host}${window.location.pathname}`;
+                tempDiv.select();
+                document.execCommand("copy");
+              }
+            }}>
+                  <ShareIcon />
+                </IconButton> */}
           </Toolbar>
         </AppBar>
         <div className={classes.docHeader}>

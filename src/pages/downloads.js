@@ -9,11 +9,14 @@ import {
   Typography,
   Button,
   Link as MLink,
+  Paper,
+  Grid
 } from "@material-ui/core"
 
 import { siteTheme } from "../theme"
 
 import appHero from "../images/download-app.png"
+import appLaptop from "../images/desktop_new.png"
 import masButton from "../images/mas-button.svg"
 import snapButton from "../images/snap-button.svg"
 
@@ -59,6 +62,11 @@ const styles = {
   download: {
     marginBottom: 48,
   },
+  downloadPaper: {
+    ...siteTheme.mixins.gutters(),
+    paddingTop: siteTheme.spacing.unit * 3,
+    paddingBottom: siteTheme.spacing.unit * 3,
+  },
   downloadButton: {
     marginRight: 8,
     height: 40,
@@ -72,6 +80,7 @@ const styles = {
 
 const DownloadsPage = ({ classes, data }) => {
   const { release } = data.site.siteMetadata
+  const newDesktopApp = "https://github.com/hyperspacedev/hyperspace/pull/52"
   return (
     <Layout>
       <SEO title="Download Hyperspace" />
@@ -120,6 +129,31 @@ const DownloadsPage = ({ classes, data }) => {
         </div>
       </div>
       <div className={classes.downloads}>
+        <div className={classes.download}>
+          <Paper elevation={2} className={classes.downloadPaper}>
+            <Grid container spacing={8}>
+              <Grid item xs={12} md={8}>
+                <Typography variant="h4" component="h2">
+                  <b>The new desktop app, coming soon.</b>
+                </Typography>
+                <br/>
+                <Typography paragraph>The brand new Hyperspace desktop app for Windows, macOS, and Linux is coming soon with a brand new design and all the features you know and love from Hyperspace 1.0 beta, from managing follow requests and an easier login system to themes and more customization options.</Typography>
+                <br />
+                <Button
+                  href={newDesktopApp}
+                  target="_blank"
+                  rel="noopener noreferrer nofollower"
+                  className={classes.downloadButton}
+                >
+                  Learn more
+                </Button>
+              </Grid>
+              <Grid item xs={12} md={4} style={{textAlign: 'center'}}>
+                <img src={appLaptop} alt="New Hyperspace app for macOS" style={{width: '75%'}}/>
+              </Grid>
+            </Grid>
+          </Paper>
+        </div>
         <div className={classes.download}>
           <Typography variant="h4" component="h2">
             Windows
