@@ -4,6 +4,32 @@ path: /docs/whats-new-beta
 description: 'Read about the latest features, improvements, changes, and bug fixes coming to Hyperspace (currently in beta).'
 priority: 0
 ---
+# 1.0.0beta5 (May 24, 2019)
+
+What's new:
+
+- Source code introduces a new [Patreon contributors](https://github.com/hyperspacedev/hyperspace/blob/master/patreon.md) list (#59)
+- Fixes an issue with the search functionality on the desktop apps (fixes #60)
+- Media cards should be shorter in description length and hide images when necessary (fixes #47)
+
+---
+
+# 1.0.0beta4 (May 17, 2019)
+
+What's new:
+
+- Introduces new instance and app cards on the about page to better organize info (fixes #46)
+  - Instance card includes options to invite a new user, view terms of service, etc.
+- Refines control on federation settings, including public timelines, universal login, and default visibilities (fixes #50)
+- Introduces code to build the new desktop apps that support the following (#52):
+  - New login system supported by `hyperspace://` protocol
+  - Themes and dark mode fully supported in macOS (#55)
+  - Links that try to open in a new window (using `target="_blank"`) opens in default browser
+  - Includes build instructions for the desktop
+- Includes Azure Pipelines code that tests building process
+
+---
+
 # 1.0.0beta3 (May 3, 2019)
 
 What's new:

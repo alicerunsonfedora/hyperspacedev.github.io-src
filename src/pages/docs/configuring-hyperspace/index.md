@@ -6,6 +6,8 @@ priority: 3
 ---
 Newer versions of Hyperspace, starting from 1.0, come with a `config.json` file in the build folder to configure various parts of Hyperspace without digging into the source code. This config file includes branding, licenses, federation support, and a few other configurations.
 
+> **Important**: As of Hyperspace 1.0.0beta4, all Boolean keys are no longer wrapped as strings; your config file must have all Boolean values as they are.
+
 ## Change Hyperspace's branding
 
 The branding background, logo, and name is controlled under the `branding` key:
@@ -32,11 +34,11 @@ There are some extra keys for handling actions such as federation, registrations
 
 | Key | Default value | Description |
 | -- | -- | -- |
-| `federated` | "true" | Whether the instance of Mastodon is federated or not. This is used to disable access to public fediverse features in Hyperspace for local instances. |
+| `federated` | n/a | Whether the instance of Mastodon is federated or not. This is used to disable access to public fediverse features in Hyperspace for local instances. |
 | `registration` | n/a | Information regarding registration of the instance. See below for more information |
 | `admin` | n/a | The administrator that installed Hyperspace. |
 
-> Note: As of [Hyperspace 1.0.0beta3](https://github.com/hyperspacedev/hyperspace/releases/tag/1.0.0beta3)+, the `federated` key also controls other settings, including the default visibility of new posts, and also restricts login to the instance listed in `defaultInstance`.
+> Note: As of [Hyperspace 1.0.0beta4](https://github.com/hyperspacedev/hyperspace/releases/tag/1.0.0beta4)+, the `federated` key now expands to more configuration settings.
 
 ### Registration information
 
@@ -51,10 +53,22 @@ There are some extra keys for handling actions such as federation, registrations
 | `name` | n/a | The name of the administator. This can be a display name or real name. |
 | `account` | n/a | The account ID number on the Mastodon network. |
 
+### Federation information
+
+| Subkey | Default value | Description |
+| -- | -- | -- |
+| `universalLogin` | true | Whether anyone from any Mastodon instance can login to the app |
+| `allowPublicPosts` | true | Whether users can post publicly on the app |
+| `enablePublicTimeline` | true | Whether users can view the public timeline |
+
 ### Example
 
 ```json
-"federated": "true",
+"federated": {
+    "universalLogin": true,
+    "allowPublicPosts": true,
+    "enablePublicTimeline": true
+},
 "registration": {
     "defaultInstance": "mastodon.social"
 },
@@ -70,11 +84,11 @@ There are other fields responsible for handling app information such as version,
 
 | Key | Default value | Description |
 | -- | -- | -- |
-| `developer` | "false" | Whether the app should be run in developer mode or not. This helps distinguish between a stable release and a beta release for users. |
+| `developer` | false | Whether the app should be run in developer mode or not. This helps distinguish between a stable release and a beta release for users. |
 | `version` | Hyperspace version as a string | **Required:** The version of the application. |
 | `license` | n/a | **Required:** The license information for the app, if it falls under a different license than what Hyperspace includes. |
 | `repository` | "https&#58;//github.com/hyperspacedev/hyperspace" | The URL to the repository containing the source code if it is open-source. |
-| `location` | "dynamic" | **Required:** The URL that points to your Hyperspace installation, or 'dynamic' if it should be inferred from `window.location`. |
+| `location` | "dynamic" | **Required:** The URL that points to your Hyperspace installation, or 'dynamic' if it should be inferred from `window.location`. When building the desktop application, this is set to 'desktop'. |
 
 ### License information
 | Subkey | Default value | Description |
@@ -86,13 +100,14 @@ There are other fields responsible for handling app information such as version,
 
 ```json
 {
-    "version": "1.0.0beta1",
-    "developer": "true",
+    "version": "1.0.0beta5",
+    "developer": true,
     "license": {
         "name": "Apache 2.0 License",
         "url": "https://www.apache.org/licenses/LICENSE-2.0"
     },
     "repository": "https://github.com/hyperspacedev/hyperspace",
+    "location": "dynamic",
 }
 ```
 
@@ -101,13 +116,18 @@ There are other fields responsible for handling app information such as version,
 ```json
 {
     "version": "1.0.0beta1",
+    "location": "dynamic",
     "branding": {
         "name": "Hyperspace",
         "logo": "logo.svg",
         "background": "background.png"
     },
-    "developer": "true",
-    "federated": "true",
+    "developer": true,
+    "federated": {
+        "universalLogin": true,
+        "allowPublicPosts": true,
+        "enablePublicTimeline": true
+    },
     "registration": {
         "defaultInstance": "mastodon.social"
     },

@@ -143,7 +143,7 @@ const Template = ({ data, classes }) => {
   const title = data.markdownRemark.frontmatter.title
   const description = data.markdownRemark.frontmatter.description
   const html = data.markdownRemark.html
-  const path = data.markdownRemark.frontmatter.path
+  //const path = data.markdownRemark.frontmatter.path
 
   return (
     <div className={classes.root}>
@@ -164,7 +164,7 @@ const Template = ({ data, classes }) => {
             <Typography variant="h6" color="inherit" className={classes.title}>
               Hyperspace Docs
             </Typography>
-            {/* <IconButton color="inherit" onClick={() => {
+            <IconButton color="inherit" onClick={() => {
               if (navigator.share) {
                 navigator.share({
                   title: title,
@@ -180,7 +180,7 @@ const Template = ({ data, classes }) => {
               }
             }}>
                   <ShareIcon />
-                </IconButton> */}
+                </IconButton>
           </Toolbar>
         </AppBar>
         <div className={classes.docHeader}>

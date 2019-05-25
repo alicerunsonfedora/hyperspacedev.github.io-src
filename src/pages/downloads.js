@@ -46,7 +46,7 @@ const styles = {
     zIndex: -1
   },
   rootContent: {
-    zIndex: 1
+    zIndex: 1,
   },
   rootButton: {
     marginLeft: 4,
@@ -55,9 +55,13 @@ const styles = {
   },
   downloads: {
     paddingTop: 48,
-    paddingLeft: 72,
     paddingBottom: 48,
-    paddingRight: 72,
+    paddingLeft: 16,
+    paddingRight: 16,
+    [siteTheme.breakpoints.up('sm')]: {
+      paddingLeft: 72,
+      paddingRight: 72,
+    },
   },
   download: {
     marginBottom: 48,
@@ -76,18 +80,21 @@ const styles = {
     width: "auto",
     verticalAlign: "middle",
   },
+  headingShrink: {
+    fontSize: '3em'
+  },
 }
 
 const DownloadsPage = ({ classes, data }) => {
   const { release } = data.site.siteMetadata
-  const newDesktopApp = "https://github.com/hyperspacedev/hyperspace/pull/52"
+  const newDesktopApp = "https://github.com/hyperspacedev/hyperspace/releases/tag/1.0.0beta5"
   return (
     <Layout>
       <SEO title="Download Hyperspace" />
       <div className={classes.root}>
         <div className={classes.rootBackground}/>
         <div className={classes.rootContent}>
-          <Typography variant="h2" component="h1" color="inherit">
+          <Typography variant="h2" component="h1" color="inherit" className={classes.headingShrink}>
             <b>Download Hyperspace</b>
           </Typography>
           <br />
@@ -123,7 +130,7 @@ const DownloadsPage = ({ classes, data }) => {
           <Typography color="inherit">
             Need help setting up Hyperspace on your server?{" "}
             <MLink color="inherit" component={Link} to="/docs/getting-started">
-              <b>Follow the guide.</b>
+              <b>Follow the guide &rsaquo;</b>
             </MLink>
           </Typography>
         </div>
@@ -132,23 +139,25 @@ const DownloadsPage = ({ classes, data }) => {
         <div className={classes.download}>
           <Paper elevation={2} className={classes.downloadPaper}>
             <Grid container spacing={8}>
-              <Grid item xs={12} md={8}>
+              <Grid item xs={12} md={7}>
                 <Typography variant="h4" component="h2">
-                  <b>The new desktop app, coming soon.</b>
+                  <b>The new desktop app is here (in beta).</b>
                 </Typography>
                 <br/>
-                <Typography paragraph>The brand new Hyperspace desktop app for Windows, macOS, and Linux is coming soon with a brand new design and all the features you know and love from Hyperspace 1.0 beta, from managing follow requests and an easier login system to themes and more customization options.</Typography>
+                <Typography paragraph>The brand new Hyperspace desktop app for Windows, macOS, and Linux is here (in beta) with a brand new design and all the features you know and love from Hyperspace 1.0 beta, from managing follow requests and an easier login system to themes and more customization options.</Typography>
                 <br />
                 <Button
                   href={newDesktopApp}
                   target="_blank"
                   rel="noopener noreferrer nofollower"
                   className={classes.downloadButton}
+                  variant="contained"
+                  color="primary"
                 >
-                  Learn more
+                  Try it now
                 </Button>
               </Grid>
-              <Grid item xs={12} md={4} style={{textAlign: 'center'}}>
+              <Grid item xs={12} md={5} style={{textAlign: 'center'}}>
                 <img src={appLaptop} alt="New Hyperspace app for macOS" style={{width: '75%'}}/>
               </Grid>
             </Grid>

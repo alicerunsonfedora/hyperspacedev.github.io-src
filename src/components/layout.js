@@ -67,7 +67,7 @@ const Layout = ({ classes, children }) => (
             <footer className={classes.footer}>
               <div>
                 <Typography variant="caption">
-                  © {new Date().getFullYear()} {data.site.siteMetadata.author}.
+                  © {new Date().getFullYear()} {data.site.siteMetadata.author} with 💚.
                 </Typography>
                 <Typography variant="caption" paragraph>
                   Apple, the Apple logo, Mac, iPhone, and iPad are trademarks of
@@ -76,7 +76,7 @@ const Layout = ({ classes, children }) => (
                   a registered trademark of Microsoft.
                 </Typography>
                 <Typography variant="caption">
-                  <Link href="https://github.com/hyperspacedev" color="textSecondary">View GitHub profile</Link> | <Link href="mailto:hyperspacedev@marquiskurt.net" color="textSecondary">Contact via email</Link> | <Link href="https://mastodon.social/hyperspacedev" color="textSecondary">Follow on Mastodon</Link> | <Link href="https://discord.gg/c69AXwk" color="textSecondary">Join Discord server</Link> | <Link href="https://matrix.to/#/#hyperspace-general:matrix.org" color="textSecondary">Chat on Matrix</Link>
+                  <Link href="https://github.com/hyperspacedev" color="textSecondary">View GitHub profile</Link> | <Link href="mailto:hyperspacedev@marquiskurt.net" color="textSecondary">Contact via email</Link> | <Link href="https://patreon.com/hyperspacedev" color="textSecondary">Support on Patreon</Link> | <Link href="https://mastodon.social/hyperspacedev" color="textSecondary">Follow on Mastodon</Link> | <Link href="https://discord.gg/c69AXwk" color="textSecondary">Join Discord server</Link> | <Link href="https://matrix.to/#/#hyperspace-general:matrix.org" color="textSecondary">Chat on Matrix</Link>
                 </Typography>
               </div>
             </footer>
